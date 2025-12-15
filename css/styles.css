@@ -25,9 +25,23 @@ body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Ar
 main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-gradient(180deg, transparent, transparent);padding:2rem;border-radius:12px}
 .card{background:var(--card);padding:1.25rem;border-radius:10px;box-shadow:var(--shadow)}
 
+/* Projects */
+.projects{margin-top:1.25rem}
+.project{display:flex;gap:1rem;align-items:center}
+.project a{display:flex;gap:1rem;align-items:center;color:inherit;text-decoration:none}
+.project-thumb{width:160px;height:100px;border-radius:8px;object-fit:cover;background:#eef3f6;border:1px solid rgba(0,0,0,0.04)}
+.project-body h2{margin:.25rem 0}
+.project-desc{margin:0;color:var(--muted)}
+
 footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;color:var(--muted)}
 
-/* Small screens */
+/* Responsive: stack on small screens */
+@media(max-width:700px){
+  .project{flex-direction:column;align-items:flex-start}
+  .project-thumb{width:100%;height:160px}
+}
+
+/* Small screens layout for hero */
 @media(min-width:700px){
   .site-bar{padding:0 1rem}
   main.hero{grid-template-columns:1fr 360px}
