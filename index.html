@@ -11,7 +11,6 @@
     <div class="site-bar">
       <a class="brand" href="./">Schulprojekte</a>
       <div style="display:flex;align-items:center;gap:1rem">
-        <!-- top-right project link removed; projects appear below -->
         <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema umschalten" aria-pressed="false">
           <img src="assets/icons/sun.svg" class="icon sun" alt="" aria-hidden="true"/>
           <img src="assets/icons/moon.svg" class="icon moon" alt="" aria-hidden="true"/>
@@ -26,10 +25,10 @@
       <p>Eine Sammlung meiner Schulprojekte.</p>
     </section>
 
-    <!-- Projects list (added): each project shows a thumbnail, title and short description -->
-    <section class="projects">
-      <div class="card project">
-        <a href="Europa-Projekt/">
+    <!-- Projects list (styled like search results) -->
+    <section class="projects" role="list">
+      <div class="card project" role="listitem" style="--i:0">
+        <a class="project-link" href="Europa-Projekt/">
           <img src="assets/images/europa-thumb.svg" class="project-thumb" alt="Europa‑Projekt Thumbnail (Platzhalter)" />
           <div class="project-body">
             <h2>Europa‑Projekt</h2>
@@ -37,9 +36,11 @@
           </div>
         </a>
       </div>
+
+      <!-- Example placeholder for future projects; add more project blocks like above -->
+      <!-- <div class="card project" role="listitem" style="--i:1"> ... </div> -->
     </section>
 
-    <!-- removed the previous "Tip" aside per request -->
   </main>
 
   <footer class="site-footer"><small>© eripum9</small></footer>

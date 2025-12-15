@@ -26,20 +26,30 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
 .card{background:var(--card);padding:1.25rem;border-radius:10px;box-shadow:var(--shadow)}
 
 /* Projects */
-.projects{margin-top:1.25rem}
-.project{display:flex;gap:1rem;align-items:center}
-.project a{display:flex;gap:1rem;align-items:center;color:inherit;text-decoration:none}
-.project-thumb{width:160px;height:100px;border-radius:8px;object-fit:cover;background:#eef3f6;border:1px solid rgba(0,0,0,0.04)}
-.project-body h2{margin:.25rem 0}
+.projects{margin-top:1.25rem;display:flex;flex-direction:column;gap:1rem}
+.project{display:flex;gap:1rem;align-items:flex-start;padding:.75rem;border-radius:12px;background:var(--card);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease;overflow:hidden;animation:fadeInUp .42s ease both;animation-delay:calc(var(--i,0) * .08s)}
+.project a{display:flex;gap:1rem;align-items:flex-start;color:inherit;text-decoration:none;width:100%}
+.project-thumb{width:320px;height:180px;border-radius:8px;object-fit:cover;background:#eef3f6;border:1px solid rgba(0,0,0,0.04);flex:0 0 320px;transition:transform .18s ease,box-shadow .18s ease}
+.project-body{flex:1;min-width:0}
+.project h2{margin:.25rem 0;font-size:1.125rem}
 .project-desc{margin:0;color:var(--muted)}
 
-footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;color:var(--muted)}
+.project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.10)}
+.project:hover .project-thumb{transform:scale(1.03)}
 
-/* Responsive: stack on small screens */
+/* Keyframes */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Responsive: smaller thumbs and stacked layout */
+@media(max-width:1000px){
+  .project-thumb{width:240px;height:135px;flex:0 0 240px}
+}
 @media(max-width:700px){
   .project{flex-direction:column;align-items:flex-start}
-  .project-thumb{width:100%;height:160px}
+  .project-thumb{width:100%;height:160px;flex:0 0 auto}
 }
+
+footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;color:var(--muted)}
 
 /* Small screens layout for hero */
 @media(min-width:700px){
