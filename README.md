@@ -1,5 +1,5 @@
-# School — MythOS subsite
+# School — Schulprojekte
 
-Dies ist der Quellcode für meine School-Unterseite (Schulprojekte).
+Dies ist der Quellcode für meine Schulprojekte-Unterseite.
 
-This repository is not related to my game production at PumpgunStudios.
+Dieses Repository steht in keinem Zusammenhang mit meiner Spieleproduktion bei PumpgunStudios.
