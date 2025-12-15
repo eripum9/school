@@ -1,4 +1,4 @@
-# School — Subsite
+# School — MythOS subsite
 
 Dies ist der Quellcode für meine School-Unterseite (Schulprojekte).
 
