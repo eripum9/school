@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#fff1d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g2)"/>
+  <rect x="48" y="48" width="1184" height="624" rx="14" ry="14" fill="#fff" opacity="0.06"/>
+  <g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" fill="#3a2f1b">
+    <text x="80" y="160" font-size="44" font-weight="700">Sollte es eine EU‑weite Asylpolitik geben?</text>
+    <text x="80" y="210" font-size="20" opacity="0.9">Placeholder — Thumbnail (erstellt automatisch)</text>
+  </g>
+  <g transform="translate(80,260)">
+    <rect width="520" height="18" rx="9" fill="#f59e0b" opacity="0.18"/>
+    <rect y="36" width="420" height="10" rx="5" fill="#fbbf24" opacity="0.12"/>
+  </g>
+  <g transform="translate(760,300)" fill="#3a2f1b" opacity="0.06">
+    <rect width="360" height="200" rx="8"/>
+  </g>
+</svg>
