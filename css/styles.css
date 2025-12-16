@@ -48,10 +48,13 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
   /* Stack project card; ensure thumbnail doesn't push content off-screen */
   .project{flex-direction:column;align-items:flex-start;padding:.6rem;min-height:0}
 
-  /* Render the thumbnail smaller (length/width) and centered so description is visible below */
-  .project-thumb{width:90%;max-width:320px;height:auto;flex:0 0 auto;max-height:140px;object-fit:cover;display:block;margin:0 auto}
+  /* Make the anchor block-level so image and body stack naturally */
+  .project a{display:block}
 
-  .project-body{padding-top:.75rem;display:block}
+  /* Render the thumbnail smaller (length/width) and centered so description is visible below */
+  .project-thumb{width:80%;max-width:320px;height:auto;flex:0 0 auto;max-height:140px;object-fit:cover;display:block;margin:0 auto .6rem}
+
+  .project-body{padding-top:0;display:block;color:var(--text)}
 
   /* Make cover image more compact on narrow screens */
   .cover img{max-height:140px;object-fit:cover;border-radius:8px}
@@ -60,7 +63,7 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
 /* Extra small screens */
 @media(max-width:420px){
   .cover img{max-height:100px}
-  .project-thumb{width:90%;max-width:260px;height:auto;max-height:120px}
+  .project-thumb{width:85%;max-width:260px;height:auto;max-height:120px}
   .project h2{font-size:1rem}
 }
 
