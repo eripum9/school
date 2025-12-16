@@ -58,6 +58,9 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
 
   /* Make cover image more compact on narrow screens */
   .cover img{max-height:140px;object-fit:cover;border-radius:8px}
+
+  /* Also make the direct inner div inside .project stack on small screens */
+  .project > div{display:flex;flex-direction:column;align-items:center}
 }
 
 /* Extra small screens */
