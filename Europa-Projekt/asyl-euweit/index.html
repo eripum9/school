@@ -53,9 +53,34 @@
       <p>Siehe auch: <a href="../asylpolitik/">Asylpolitik</a>, <a href="../asyl-de2025/">Die Asyllage in Deutschland 2025</a> und das <a href="../asylpolitik/tabloid.html">Tabloid (Pro/Contra)</a>.</p>
     </section>
 
+    <section class="card sources" id="sources">
+      <button id="sources-toggle" class="sources-toggle" aria-expanded="false" aria-controls="sources-list">Quellen ▾</button>
+      <ul id="sources-list" class="sources-list" hidden>
+        <li><a href="https://www.europaimunterricht.de/fluechtlings-migrations-asyl-politik" target="_blank" rel="noopener noreferrer">Europa im Unterricht — Flüchtlings-, Migrations- und Asylpolitik</a></li>
+        <li><a href="https://www.dw.com/de/eu-innenminister-schaerfere-asylregeln-rueckfuehrung-migranten-asylbewerber/a-75062808" target="_blank" rel="noopener noreferrer">DW — EU-Innenminister: schärfere Asylregeln</a></li>
+        <li><a href="https://www.faz.net/aktuell/politik/ausland/eu-asylreform-erstmals-auf-entlastung-von-staaten-an-aussengrenze-verstaendigt-accg-110803088.html" target="_blank" rel="noopener noreferrer">FAZ — EU-Asylreform: Entlastung von Staaten an Außengrenzen</a></li>
+        <li><a href="https://www.tagesschau.de/ausland/europa/eu-innenminister-asylpaket-einigung-100.html" target="_blank" rel="noopener noreferrer">Tagesschau — EU-Innenminister: Asylpaket-Einigung</a></li>
+        <li><a href="https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2025/12/ji-rat-1225.html" target="_blank" rel="noopener noreferrer">BMI — Innenministerrat (12/2025)</a></li>
+        <li><a href="https://taz.de/Heftige-Kritik-an-der-Bundesregierung/!6135867/" target="_blank" rel="noopener noreferrer">taz — Heftige Kritik an der Bundesregierung</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer class="site-footer"><small>© eripum9</small></footer>
   <script src="/school/js/theme.js"></script>
+  <script>
+    (function(){
+      const btn = document.getElementById('sources-toggle');
+      const list = document.getElementById('sources-list');
+      if(!btn || !list) return;
+      btn.addEventListener('click', ()=>{
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        list.hidden = open;
+        btn.innerText = open ? 'Quellen ▾' : 'Quellen ▴';
+      });
+    })();
+  </script>
 </body>
 </html>
