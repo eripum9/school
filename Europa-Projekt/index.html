@@ -15,16 +15,21 @@
   </header>
 
   <main class="container">
-    <div class="card cover">
-      <picture>
-        <source srcset="cover.jpg" type="image/jpeg">
-        <img src="cover.jpg" loading="lazy" width="1280" height="720" alt="Europa‑Projekt Cover" />
-      </picture>
+
+    <!-- Inline project card: image left and description to the right on wide screens; stacks on small screens -->
+    <div class="card project" role="article" style="--i:0">
+      <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+        <img src="../assets/images/europa-thumb.jpg" loading="lazy" class="project-thumb" alt="Europa‑Projekt image" />
+        <div class="project-body">
+          <h1>Europa‑Projekt</h1>
+          <p>Seite zum Europa‑Projekt — hier finden Sie Dokumentation und Ergebnisse.</p>
+        </div>
+      </div>
     </div>
 
     <section class="card">
-      <h1>Europa‑Projekt</h1>
-      <p>Seite zum Europa‑Projekt — hier finden Sie Dokumentation und Ergebnisse.</p>
+      <h2>Details</h2>
+      <p>Mehr Inhalte, Links und Dokumentation können hier hinzugefügt werden.</p>
     </section>
   </main>
 
