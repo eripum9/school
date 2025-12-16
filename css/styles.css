@@ -45,8 +45,20 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
   .project-thumb{width:240px;height:135px;flex:0 0 240px}
 }
 @media(max-width:700px){
-  .project{flex-direction:column;align-items:flex-start}
-  .project-thumb{width:100%;height:160px;flex:0 0 auto}
+  /* Stack project card; ensure thumbnail doesn't push content off-screen */
+  .project{flex-direction:column;align-items:flex-start;padding:.6rem}
+  .project-thumb{width:100%;height:160px;flex:0 0 auto;max-height:220px;object-fit:cover}
+  .project-body{padding-top:.5rem}
+
+  /* Make cover image more compact on narrow screens */
+  .cover img{max-height:220px;object-fit:cover;border-radius:8px}
+}
+
+/* Extra small screens */
+@media(max-width:420px){
+  .cover img{max-height:180px}
+  .project-thumb{height:140px}
+  .project h2{font-size:1rem}
 }
 
 footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;color:var(--muted)}
