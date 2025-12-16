@@ -1,5 +1,3 @@
 # Europa‑Projekt
 
-Dies ist die Unterseite "Europa‑Projekt" der Schulprojekte.
-
-**Cover:** If you want the EU flag image as the cover, add it here as `cover.jpg` (1280×720, progressive JPEG recommended). Replace the placeholder `cover.svg` if present.
+Dieses Verzeichnis enthält die Inhalte des Europa‑Projekts: Übersichten, Unterseiten (z. B. Asylpolitik), gesammelte Quellen und Materialien zur europäischen Politik. Die Seiten sind für GitHub Pages optimiert und in Deutsch verfasst.
