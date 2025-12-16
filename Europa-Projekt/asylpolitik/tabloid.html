@@ -9,14 +9,7 @@
 <body>
   <header class="site-header">
     <div class="site-bar">
-      <a class="brand" href="../">Europa‑Projekt</a>
-      <nav class="site-nav"><a href="../">Zurück</a></nav>
-      <div style="display:flex;align-items:center;gap:1rem">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema umschalten" aria-pressed="false">
-          <img src="../../assets/icons/sun.svg" class="icon sun" alt="" aria-hidden="true"/>
-          <img src="../../assets/icons/moon.svg" class="icon moon" alt="" aria-hidden="true"/>
-        </button>
-      </div>
+      <span class="brand">Europa‑Projekt</span>
     </div>
   </header>
 
@@ -89,5 +82,23 @@
 
   <footer class="site-footer"><small>© eripum9</small></footer>
   <script src="/school/js/theme.js"></script>
+  <script>
+    (function(){
+      function applyTheme(theme){
+        if(theme === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        else document.documentElement.removeAttribute('data-theme');
+      }
+      try{
+        const stored = localStorage.getItem('site-theme');
+        if(stored) applyTheme(stored);
+        else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+      }catch(e){/* ignore */}
+
+      window.addEventListener('message', (ev)=>{
+        if(!ev.data || ev.data.type !== 'set-theme') return;
+        applyTheme(ev.data.theme);
+      }, false);
+    })();
+  </script>
 </body>
 </html>
