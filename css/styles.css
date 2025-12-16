@@ -48,13 +48,13 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
   /* Stack project card; ensure thumbnail doesn't push content off-screen */
   .project{flex-direction:column;align-items:flex-start;padding:.6rem;min-height:0}
 
-  /* Make the anchor block-level so image and body stack naturally */
-  .project a{display:block}
+  /* On narrow devices, make the project link a flex column so image sits above the description */
+  .project a{display:flex;flex-direction:column;align-items:center}
 
   /* Render the thumbnail smaller (length/width) and centered so description is visible below */
   .project-thumb{width:80%;max-width:320px;height:auto;flex:0 0 auto;max-height:140px;object-fit:cover;display:block;margin:0 auto .6rem}
 
-  .project-body{padding-top:0;display:block;color:var(--text)}
+  .project-body{padding-top:0;display:block;color:var(--text);width:100%}
 
   /* Make cover image more compact on narrow screens */
   .cover img{max-height:140px;object-fit:cover;border-radius:8px}
@@ -65,6 +65,9 @@ main.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;background:linear-g
   .cover img{max-height:100px}
   .project-thumb{width:85%;max-width:260px;height:auto;max-height:120px}
   .project h2{font-size:1rem}
+  /* On very narrow devices force the project content to stack and center text */
+  .project a{align-items:center}
+  .project-body{padding:.5rem 0;text-align:center}
 }
 
 footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;color:var(--muted)}
