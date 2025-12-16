@@ -97,3 +97,8 @@ footer.site-footer{max-width:1000px;margin:2rem auto 4rem auto;padding:0 1rem;co
 .asyl-content h3{margin-top:1rem}
 .asyl-content p{margin:0.5rem 0 0.9rem 0;line-height:1.6}
 
+/* EU-weit page content */
+.euweit-content h3{margin-top:1rem}
+.euweit-content p{margin:0.6rem 0 0.9rem 0;line-height:1.6}
+.euweit-content p:first-of-type{font-weight:600;color:var(--text);margin-bottom:.8rem}
+
