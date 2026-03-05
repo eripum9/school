@@ -5,5 +5,3 @@ Kurzbeschreibung: Diskussionsseite zur Frage, ob und wie eine einheitliche Asylp
 Dateien:
 
 - `index.html` — Überblick, Kurzfassung und Diskussionspunkte.
-
-Pflegehinweis: Ergänze hier detaillierte Gegenargumente, Policy-Vorschläge oder Quellen, wenn du möchtest.
