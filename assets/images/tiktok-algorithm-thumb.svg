@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Tiktok-Algorithm Placeholder</title>
+  <desc id="desc">Abstrakte Platzhaltergrafik für die Unterseite Tiktok-Algorithm.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" rx="16" fill="url(#bg)" />
+  <circle cx="78" cy="58" r="28" fill="#f43f5e" opacity="0.92" />
+  <circle cx="110" cy="84" r="22" fill="#22d3ee" opacity="0.88" />
+  <path d="M202 46c14 0 26 10 26 24 0 17-12 28-30 28h-14v36h-22V46h40zm-4 34c5 0 9-3 9-9s-4-8-9-8h-14v17h14z" fill="#fff" />
+  <text x="30" y="146" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Tiktok-Algorithm</text>
+  <text x="30" y="164" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="12">Platzhaltergrafik für das Schulprojekt</text>
+</svg>
