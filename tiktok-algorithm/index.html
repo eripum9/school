@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The TikTok Algorithm - School Project</title>
+  <link rel="icon" href="../assets/icons/sun.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .script-content p{margin:0.6rem 0 0.95rem;line-height:1.65}
+    .script-note{color:var(--muted);margin-top:.5rem}
+    .graph-card{position:relative;overflow:hidden}
+    .section-kicker{margin:0 0 .25rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+    .chart-intro{margin:.25rem 0 1rem;color:var(--muted)}
+    .chart{margin:0}
+    .signal-chart,.bar-chart{display:grid;gap:.72rem;margin-top:1rem}
+    .signal-row,.bar-row{display:grid;grid-template-columns:8.8rem 1fr 7.2rem;gap:.75rem;align-items:center}
+    .bar-row{grid-template-columns:7.5rem 1fr 3rem}
+    .signal-label,.bar-label{font-weight:700}
+    .signal-track,.bar-track{height:1.05rem;border-radius:999px;background:rgba(148,163,184,.24);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(148,163,184,.14)}
+    .signal-fill,.bar-fill{display:block;height:100%;width:var(--value);border-radius:inherit;background:var(--bar)}
+    .signal-value,.bar-value{text-align:right;color:var(--muted);font-size:.92rem}
+    .chart-caption{margin-top:1rem;color:var(--muted);font-size:.92rem;line-height:1.55}
+    .loop-graph{display:grid;grid-template-columns:minmax(0,1fr) 1.4rem minmax(0,1fr) 1.4rem minmax(0,1fr) 1.4rem minmax(0,1fr) 1.4rem minmax(0,1fr);gap:.55rem;align-items:center;margin-top:1rem}
+    .loop-node{min-height:6.5rem;border:1px solid rgba(148,163,184,.26);border-radius:8px;padding:.8rem;background:rgba(148,163,184,.08);display:flex;flex-direction:column;justify-content:center}
+    .loop-node strong{font-size:1rem}
+    .loop-node span{margin-top:.25rem;color:var(--muted);font-size:.9rem}
+    .loop-arrow{font-weight:900;text-align:center;color:var(--accent);font-size:1.35rem}
+    .risk-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+    .risk-item{border:1px solid rgba(148,163,184,.26);border-top:4px solid var(--risk);border-radius:8px;padding:.85rem;background:rgba(148,163,184,.08)}
+    .risk-item strong{display:block;margin-bottom:.25rem}
+    .risk-item span{color:var(--muted);font-size:.93rem}
+    .sources-card a{color:var(--accent)}
+    @media(max-width:880px){
+      .risk-map{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .loop-graph{grid-template-columns:1fr}
+      .loop-arrow{transform:rotate(90deg)}
+    }
+    @media(max-width:620px){
+      .signal-row,.bar-row{grid-template-columns:1fr}
+      .signal-value,.bar-value{text-align:left}
+      .risk-map{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-bar">
+      <a class="brand" href="../">Schulprojekte</a>
+      <nav class="site-nav"><a href="../">Back</a></nav>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" aria-pressed="false">
+          <img src="../assets/icons/sun.svg" class="icon sun" alt="" aria-hidden="true" />
+          <img src="../assets/icons/moon.svg" class="icon moon" alt="" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>The TikTok Algorithm</h1>
+      <p class="lede">This page contains the full text for the spoken English project. The graphs are placed exactly where they are mentioned in the script.</p>
+      <p class="script-note">Topic: how the For You feed works, why TikTok can feel addictive, and what users can do to stay more conscious.</p>
+    </section>
+
+    <section class="card script-content" id="recording-text">
+      <h2>Recording Text</h2>
+      <p>Hi everyone,</p>
+      <p>today I want to talk about the TikTok algorithm. More exactly, I want to explain how the For You page works, why it can feel addictive, and why this topic is important for teenagers.</p>
+      <p>TikTok is not just an app where we watch random short videos. It is also a prediction system. While we are using it, the app learns from our behaviour. Every swipe, pause, like, search, follow, comment, and skip can become a signal for the algorithm.</p>
+      <p>The most important part of TikTok is the For You page. This is the feed where one video starts after another. Two people can open TikTok at the same time and see completely different videos. That happens because the For You page is personalised for each user.</p>
+      <p>First, I want to explain what an algorithm actually is. An algorithm is basically a set of rules or calculations that a computer uses to make decisions. In the case of TikTok, the decision is simple but powerful. Which video should be shown next?</p>
+    </section>
+
+    <section class="card graph-card script-content">
+      <p>TikTok says that the For You page uses different kinds of signals. On my first graph, I show three main groups of signals. The strongest group is user interactions. This includes likes, comments, shares, follows, searches, watch time, completion, rewatching, and skipping. The second group is video information, for example captions, hashtags, sounds, topics, and the length of the video. The third group is device and account settings, like language, country, age, and device type.</p>
+      <p class="section-kicker">Graph 1</p>
+      <h2>What trains the For You page?</h2>
+      <p class="chart-intro">This is a qualitative graph. TikTok does not publish exact weights, but it does say active user signals are more important than basic device settings.</p>
+      <figure class="chart" role="img" aria-label="Qualitative signal map showing that user interactions are strongest, video information is important, and device settings are lower weight.">
+        <div class="signal-chart">
+          <div class="signal-row">
+            <span class="signal-label">User interactions</span>
+            <span class="signal-track"><span class="signal-fill" style="--value:100%;--bar:#ff3b5c"></span></span>
+            <span class="signal-value">strong</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Video information</span>
+            <span class="signal-track"><span class="signal-fill" style="--value:78%;--bar:#12c7f4"></span></span>
+            <span class="signal-value">important</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Device settings</span>
+            <span class="signal-track"><span class="signal-fill" style="--value:38%;--bar:#f59e0b"></span></span>
+            <span class="signal-value">lower</span>
+          </div>
+        </div>
+        <figcaption class="chart-caption">Graphic credit: original HTML/CSS graph for this website. Based on TikTok Newsroom and TikTok Safety Center explanations of For You recommendation signals.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card script-content">
+      <p>The graph is not an exact formula, because TikTok does not publish the exact weights of its algorithm. But TikTok does say that active interest signals are more important than basic settings. For example, watching a longer video until the end is a stronger signal than just having the same country setting as the creator.</p>
+      <p>This is important because attention itself becomes data. Sometimes we watch a video not because we really like it, but because it is shocking, funny, dramatic, or weird. The algorithm may still understand that the video kept our attention. So the feed is not only based on what we consciously choose. It is also based on what we spend time on.</p>
+    </section>
+
+    <section class="card graph-card script-content">
+      <p>A simple way to understand the algorithm is like a loop. On my feedback-loop graph, the process has five steps. First, the user watches or skips a video. Second, TikTok measures signals from that behaviour. Third, the algorithm predicts what could be interesting next. Fourth, the feed changes and shows a new video. Fifth, the user watches again, and the loop starts again.</p>
+      <p class="section-kicker">Feedback-loop graph</p>
+      <h2>The attention feedback loop</h2>
+      <p class="chart-intro">The basic idea is simple: TikTok learns while the user watches. The feed then changes, which creates more data.</p>
+      <figure class="chart" role="img" aria-label="Loop graph: user watches or skips, signals are measured, the algorithm predicts interest, the next feed changes, and the user watches again.">
+        <div class="loop-graph">
+          <div class="loop-node"><strong>1. Watch or skip</strong><span>Videos create tiny behavior signals.</span></div>
+          <div class="loop-arrow" aria-hidden="true">></div>
+          <div class="loop-node"><strong>2. Measure signals</strong><span>Likes, watch time, searches, follows, comments, and skips matter.</span></div>
+          <div class="loop-arrow" aria-hidden="true">></div>
+          <div class="loop-node"><strong>3. Predict interest</strong><span>The system ranks videos for the next feed.</span></div>
+          <div class="loop-arrow" aria-hidden="true">></div>
+          <div class="loop-node"><strong>4. New feed</strong><span>The next videos become more personal.</span></div>
+          <div class="loop-arrow" aria-hidden="true">></div>
+          <div class="loop-node"><strong>5. Watch again</strong><span>The loop starts again with new data.</span></div>
+        </div>
+        <figcaption class="chart-caption">Graphic credit: original loop graph for this website. Based on TikTok's explanation that the For You feed continuously learns from user engagement, plus research on short-video addiction mechanisms.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card script-content">
+      <p>This is why TikTok can learn very quickly. The videos are short, so a user can watch many videos in only a few minutes. Every video gives the system new information. If someone watches football videos to the end, skips cooking videos, and searches for gym routines, the algorithm can learn this pattern very fast.</p>
+    </section>
+
+    <section class="card graph-card script-content">
+      <p>My second graph shows daily platform use among teenagers in the United States. According to Pew Research Center data from 2025, 61 percent of United States teens said they use TikTok daily. YouTube was even higher, but TikTok was still one of the most visited platforms. This data is not from Germany, so we should be careful with it. But it shows that recommendation systems are a normal part of many teenagers' everyday life.</p>
+      <p class="section-kicker">Graph 2</p>
+      <h2>Daily platform use among U.S. teens</h2>
+      <p class="chart-intro">This graph gives context for why recommendation systems matter in everyday life.</p>
+      <figure class="chart" role="img" aria-label="Pew 2025 data: 76 percent of U.S. teens use YouTube daily, 61 percent TikTok, 55 percent Instagram, 46 percent Snapchat, and 20 percent Facebook.">
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span class="bar-label">YouTube</span>
+            <span class="bar-track"><span class="bar-fill" style="--value:76%;--bar:#12c7f4"></span></span>
+            <span class="bar-value">76%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">TikTok</span>
+            <span class="bar-track"><span class="bar-fill" style="--value:61%;--bar:#ff3b5c"></span></span>
+            <span class="bar-value">61%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Instagram</span>
+            <span class="bar-track"><span class="bar-fill" style="--value:55%;--bar:#8b5cf6"></span></span>
+            <span class="bar-value">55%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Snapchat</span>
+            <span class="bar-track"><span class="bar-fill" style="--value:46%;--bar:#22c55e"></span></span>
+            <span class="bar-value">46%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Facebook</span>
+            <span class="bar-track"><span class="bar-fill" style="--value:20%;--bar:#f59e0b"></span></span>
+            <span class="bar-value">20%</span>
+          </div>
+        </div>
+        <figcaption class="chart-caption">Graphic credit: original HTML/CSS bar chart for this website. Data source: Pew Research Center, "Teens, Social Media and AI Chatbots 2025", survey of U.S. teens ages 13 to 17, Sept. 25-Oct. 9, 2025. This is U.S. data, not German data.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card script-content">
+      <h2>Why TikTok can feel addictive</h2>
+      <p>Now I want to explain why TikTok can feel addictive.</p>
+      <p>The first reason is infinite scroll. There is no real ending. When you finish a film, the film is over. When you read a chapter, the chapter ends. But on TikTok, the feed just continues. There is always one more video. This makes stopping harder, because the app never says that you are finished.</p>
+      <p>The second reason is autoplay. The next video starts automatically. You do not have to make a decision every time. This sounds like a small detail, but it is powerful. If I had to click play for every video, I would think more about whether I really want to continue. But if the next video starts by itself, I can keep watching without thinking much.</p>
+      <p>The third reason is the reward system. The next video might be boring, but it might also be exactly what I want to see. It might be funny, interesting, emotional, surprising, or useful. This is called a variable reward. The reward is not guaranteed, but it can happen at any moment. That uncertainty keeps people curious and makes them swipe again.</p>
+      <p>The fourth reason is personalisation. TikTok does not only show random videos. It learns what catches my attention. After some time, the feed can feel like it knows me. It can show my hobbies, my humour, my favourite music, my opinions, or even my insecurities. This makes the reward stronger, because the content feels personal.</p>
+      <p>Another point is social feedback. TikTok is full of likes, comments, trends, challenges, duets, and sounds. People do not only watch videos. They also see what other people are reacting to. This can create a feeling that something is happening right now and that you do not want to miss it.</p>
+      <p>Researchers often talk about a state called flow. Flow means that someone is very focused and forgets the time. This can happen in sports, games, music, or creative work. But it can also happen while scrolling. Because TikTok is fast, easy to use, and very personalised, people can lose track of time. Maybe they only wanted to watch for five minutes, but suddenly half an hour is gone.</p>
+    </section>
+
+    <section class="card graph-card script-content">
+      <p>On my risk map, I show four features that are often connected with addictive design concerns. These are infinite scroll, autoplay, notifications, and highly personalised recommendations. The European Commission also mentioned these features in February 2026 in a preliminary finding under the Digital Services Act. Preliminary means that it was not the final legal result. But it shows that governments are taking the topic seriously, especially when young users are involved.</p>
+      <p class="section-kicker">Risk map</p>
+      <h2>Features linked to addictive design concerns</h2>
+      <figure class="chart" role="img" aria-label="Risk map listing infinite scroll, autoplay, push notifications, and highly personalized recommendations as addictive design concerns mentioned by the European Commission.">
+        <div class="risk-map">
+          <div class="risk-item" style="--risk:#ff3b5c"><strong>Infinite scroll</strong><span>No natural end point, so stopping needs active effort.</span></div>
+          <div class="risk-item" style="--risk:#12c7f4"><strong>Autoplay</strong><span>The next video starts without a real decision.</span></div>
+          <div class="risk-item" style="--risk:#f59e0b"><strong>Notifications</strong><span>They can pull users back into the app.</span></div>
+          <div class="risk-item" style="--risk:#22c55e"><strong>Personalisation</strong><span>The feed becomes more relevant and harder to leave.</span></div>
+        </div>
+        <figcaption class="chart-caption">Graphic credit: original risk map for this website. Source: European Commission press release from 6 February 2026 on TikTok's addictive design under the Digital Services Act.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card script-content">
+      <h2>Balanced view and conclusion</h2>
+      <p>However, I think it is important to stay fair. It would be too simple to say that TikTok is evil and everyone is addicted. That is not true. Many people use TikTok for fun, creativity, learning, comedy, news, sports, music, and community. Small creators can reach a big audience, even if they do not have many followers.</p>
+      <p>The problem is not that TikTok is entertaining. The problem is that the app is designed to keep attention for as long as possible. This can become a conflict. The app wants me to stay, but maybe I actually wanted to do homework, sleep, meet friends, or take a break from my phone.</p>
+      <p>There are also risks. One risk is that users spend more time on the app than planned. Another risk is sleep. If someone scrolls late at night, it can affect rest and concentration the next day. For students, this can become a real problem, because school needs attention and time.</p>
+      <p>Another risk is the filter bubble. If the algorithm learns that I like one type of content, it may show me more and more of the same thing. That can be harmless with sports or comedy. But it can be problematic if the content is about extreme opinions, unrealistic beauty standards, dieting, stress, or negative emotions. Then the feed can make a topic feel bigger and more normal than it really is.</p>
+      <p>TikTok also has tools that users can use. For example, users can press Not interested, manage topics, filter keywords, refresh the feed, use screen-time settings, or turn off notifications. These tools can help, but they only work if people actually use them.</p>
+      <p>In my opinion, the most important thing is that users understand how the feed works. If I watch a topic for a long time, TikTok may show me more of it. If I do not want that, I should not only think that I did not like the video. I should also remember that watching it is already a signal.</p>
+      <p>At the end of my website, I listed the sources for my graphs and information. I used TikTok's own explanation of the For You page, TikTok's Safety Center, Pew Research Center data about teenagers, a European Commission statement about addictive design concerns, and academic research about short-video addiction.</p>
+      <p>To conclude, TikTok's algorithm is not magic. It is a feedback loop between human attention and machine prediction. The app shows videos, we react, the algorithm learns, and the next videos become more personal. This can be useful and entertaining, but it can also make the app hard to stop using.</p>
+      <p>So my final answer is this. TikTok is not automatically bad, but it is also not neutral. It is designed to keep us engaged. That is why we should not only ask, do I like this video? We should also ask, did I choose to watch this, or did the algorithm choose it for me?</p>
+    </section>
+
+    <section class="card sources-card" id="sources">
+      <button id="sources-toggle" class="sources-toggle" aria-expanded="false" aria-controls="sources-list">Sources ▾</button>
+      <ul id="sources-list" class="sources-list" hidden>
+        <li><a href="https://newsroom.tiktok.com/how-tiktok-recommends-videos-for-you?os=apprefapp&lang=en" target="_blank" rel="noopener noreferrer">TikTok Newsroom: How TikTok recommends videos #ForYou</a></li>
+        <li><a href="https://www.tiktok.com/safety/en/making-your-feed-for-you" target="_blank" rel="noopener noreferrer">TikTok Safety Center: Making your feed For You</a></li>
+        <li><a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener noreferrer">Pew Research Center: Teens, Social Media and AI Chatbots 2025</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act" target="_blank" rel="noopener noreferrer">European Commission: TikTok addictive design preliminary finding, 6 February 2026</a></li>
+        <li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1391204/full" target="_blank" rel="noopener noreferrer">Frontiers in Psychology: Psychological mechanisms of short-video addiction</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer"><small>© eripum9</small></footer>
+
+  <script src="../js/theme.js"></script>
+  <script>
+    (function(){
+      const btn = document.getElementById('sources-toggle');
+      const list = document.getElementById('sources-list');
+      if(!btn || !list) return;
+      btn.addEventListener('click', ()=>{
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        list.hidden = open;
+        btn.innerText = open ? 'Sources ▾' : 'Sources ▴';
+      });
+    })();
+  </script>
+</body>
+</html>
