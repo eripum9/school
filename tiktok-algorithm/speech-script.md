@@ -29,7 +29,7 @@ A simple way to understand the algorithm is like a loop. On my feedback-loop gra
 
 This is why TikTok can learn very quickly. The videos are short, so a user can watch many videos in only a few minutes. Every video gives the system new information. If someone watches football videos to the end, skips cooking videos, and searches for gym routines, the algorithm can learn this pattern very fast.
 
-My second graph shows daily platform use among teenagers in the United States. According to Pew Research Center data from 2025, 61 percent of United States teens said they use TikTok daily. YouTube was even higher, but TikTok was still one of the most visited platforms. This data is not from Germany, so we should be careful with it. But it shows that recommendation systems are a normal part of many teenagers' everyday life.
+My second graph shows daily platform use among teenagers. According to Pew Research Center data from 2025, 61 percent of teens said they use TikTok daily. YouTube was even higher, but TikTok was still one of the most visited platforms. This shows that recommendation systems are a normal part of many teenagers' everyday life.
 
 Now I want to explain why TikTok can feel addictive.
 
